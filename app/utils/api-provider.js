@@ -87,7 +87,8 @@ class ApiProvider {
     }
 
     static async getAnimeSearch(query){
-        const response = await fetch(`${ApiProvider.baseUrl}/anime?q=${query}`);
+        const response = await fetch(`${ApiProvider.baseUrl}/anime?q=${query}&order_by=popularity&sfw`);
+        console.log(`${ApiProvider.baseUrl}/anime?sfw`);
         return await response.json();
     }
 
